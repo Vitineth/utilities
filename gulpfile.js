@@ -20,7 +20,9 @@ function cleanTask() {
 
 function transpileTypescript() {
     return src('./src/ts/*.ts')
-        .pipe(ts())
+        .pipe(ts({
+            lib: ['DOM', 'ES2016']
+        }))
         .pipe(dest('./build/js'));
 }
 
