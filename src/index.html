@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>utilities :: ryan delaney</title>
+
+    <link href="./scss/index.scss" rel="stylesheet"/>
+    <link rel="stylesheet" href="/vendor/css/atom-one-light.min.css"/>
+
+    <script src="./ts/index.ts"></script>
+    <script src="/vendor/js/sql-formatter.min.js"></script>
+    <script src="/vendor/js/highlight.min.js"></script>
+    <script src="/vendor/js/json-format.js"></script>
+</head>
+<body>
+<nav>
+    <a href="#sql"
+       class="code"
+       data-bind-class-to-route--route="sql"
+       data-bind-class-to-route--class="active"
+    >
+        <h2>SQL</h2>
+    </a>
+    <a href="#json"
+       class="code"
+       data-bind-class-to-route--route="json"
+       data-bind-class-to-route--class="active"
+    >
+        <h2>JSON</h2>
+    </a>
+    <a href="#time"
+       class="code"
+       data-bind-class-to-route--route="time"
+       data-bind-class-to-route--class="active"
+    >
+        <h2>Time</h2>
+    </a>
+</nav>
+
+<main>
+    <div data-bind-to-route="sql" class="container force-width">
+        <h2>SQL</h2>
+        <div>
+            <input type="checkbox" id="automatic-sql" checked>
+            <label for="automatic-sql">Format on paste</label>
+        </div>
+        <pre class="code-input">
+            <code contenteditable="true" class="language-sql" id="sql-input"></code>
+        </pre>
+        <button class="c--pink" id="sql-format">Format</button>
+    </div>
+    <div data-bind-to-route="json" class="container force-width">
+        <h2>JSON</h2>
+        <div>
+            <input type="checkbox" id="automatic-json" checked>
+            <label for="automatic-json">Format on paste</label>
+        </div>
+        <pre class="code-input">
+            <code contenteditable="true" class="language-json" id="json-input"></code>
+        </pre>
+        <button class="c--cyan" id="json-format">Format</button>
+    </div>
+    <div data-bind-to-route="time" class="container force-width">
+        <h2>Time</h2>
+        <div class="time-container">
+            <div class="left">
+                <div class="group">
+                    <label for="text-left">Time</label>
+                    <input type="text" id="text-left" class="time-input">
+                </div>
+
+                <div class="group">
+                    <label for="select-left">Zone</label>
+                    <select id="select-left" class="time-input"> </select>
+                </div>
+            </div>
+            <div class="right">
+                <div class="group">
+                    <label for="text-right">Time</label>
+                    <input type="text" id="text-right" class="time-input">
+                </div>
+
+                <div class="group">
+                    <label for="select-right">Zone</label>
+                    <select id="select-right" class="time-input"> </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

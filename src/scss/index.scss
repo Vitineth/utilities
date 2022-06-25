@@ -1,0 +1,205 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, code, .code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url("/fonts/JetBrainsMono-VariableFont_wght.ttf") format("opentype");
+  font-weight: 100 800;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("/fonts/Raleway-VariableFont_wght.ttf") format("opentype");
+  font-weight: 100 900;
+}
+
+[data-route-status='false'] {
+  display: none !important;
+}
+
+.force-width {
+  max-width: 100vw;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  height: 4pc;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background: #eaeaea;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+
+  a {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    border-right: 1px solid gainsboro;
+
+    text-decoration: none;
+    color: #808080;
+
+    &:last-child {
+      border-right: none
+    }
+
+    &:hover {
+      background-color: gainsboro;
+    }
+
+    &.active {
+      background: #d8d8d8;
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+
+  .container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .code-input {
+    font-family: 'JetBrains Mono', monospace;
+    padding: 5px;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    width: 100%;
+    flex-grow: 1;
+    margin: 10px 0;
+    display: flex;
+    overflow-x: auto;
+
+    code {
+      flex-grow: 1;
+    }
+  }
+}
+
+button {
+  $colors: (
+          "gray": rgb(223, 230, 233),
+          "green": rgb(85, 239, 196),
+          "cyan": rgb(129, 236, 236),
+          "blue": rgb(116, 185, 255),
+          "purple": rgb(162, 155, 254),
+          "yellow":rgb(255, 234, 167),
+          "orange": rgb(250, 177, 160),
+          "red": rgb(255, 118, 117),
+          "pink": rgb(253, 121, 168),
+          "dark-gray": rgb(99, 110, 114),
+  );
+
+  padding: 12px;
+  border: none;
+  background: map-get($colors, "gray");
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: darken(map-get($colors, "gray"), 30%);
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(map-get($colors, "gray"), 5%);
+    color: darken(map-get($colors, "gray"), 40%);
+  }
+
+  @each $key, $val in $colors {
+    &.c--#{$key} {
+      background-color: $val;
+      //color: darken($val, 30%);
+      color: white;
+
+      &:hover {
+        background-color: darken($val, 5%);
+        color: #eaeaea;
+      }
+    }
+  }
+}
+
+.time-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  .left, .right {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    padding: 0 10%;
+
+    .group {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      label {
+        font-weight: 500;
+      }
+
+      input, select {
+        margin-top: 6px;
+      }
+    }
+
+    input, select {
+      width: 100%;
+    }
+  }
+}
+
+.time-input {
+  outline: none;
+  padding: 8px 10px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8em;
+  background-color: white;
+
+  &:focus {
+    box-shadow: 0 0 5px #57c79e;
+  }
+}
