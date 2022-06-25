@@ -1,7 +1,6 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/luxon': ^2.3.2
   gulp: ^4.0.2
   gulp-clean: ^0.4.0
   gulp-cli: ^2.3.0
@@ -18,7 +17,6 @@ specifiers:
   typescript: ^4.7.4
 
 devDependencies:
-  '@types/luxon': 2.3.2
   gulp: 4.0.2
   gulp-clean: 0.4.0
   gulp-cli: 2.3.0
@@ -70,10 +68,6 @@ packages:
 
   /@types/expect/1.20.4:
     resolution: {integrity: sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==}
-    dev: true
-
-  /@types/luxon/2.3.2:
-    resolution: {integrity: sha512-WOehptuhKIXukSUUkRgGbj2c997Uv/iUgYgII8U7XLJqq9W2oF0kQ6frEznRQbdurioz+L/cdaIm4GutTQfgmA==}
     dev: true
 
   /@types/node/14.18.21:
