@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build --production"
+    "build:prod": "gulp build --production",
+    "build": "gulp build --development",
+    "serve": "gulp serve",
+    "watch": "gulp watch",
+    "gulp": "gulp"
   },
   "author": "Ryan Delaney <vitineth@gmail.com>",
   "license": "ISC",
