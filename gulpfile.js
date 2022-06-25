@@ -21,7 +21,7 @@ function cleanTask() {
 function transpileTypescript() {
     return src('./src/ts/*.ts')
         .pipe(ts({
-            lib: ['DOM', 'ES2016']
+            lib: ['DOM', 'ES2016', "ES2017.Intl"]
         }))
         .pipe(dest('./build/js'));
 }
