@@ -1,4 +1,4 @@
-# utilities
+# utilities -- [hosted](https://utils.xiomi.org/)
 
 This repo contains the source for a basic utility website containing basic tools and utilities provided in the most simple way. All tools are designed to run client side only with no external processing to make them safe to use for sensitive data when required - guaranteed. 
 
